@@ -20,6 +20,8 @@
     //fetching data
     const endpoint =
       'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+  
+    //Pushed  data in an array of cities: 
     const cities = [];
     fetch(endpoint)
       .then(blob => blob.json())
@@ -36,7 +38,7 @@
     function numberWithCommas(x) {
       return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     }
-  // Output
+  // This function is called when someone enters some input:
     function displayMatches() {
       const matchArray = findMatches(this.value, cities);
       const html = matchArray.map(place => {
