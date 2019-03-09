@@ -23,6 +23,7 @@
   <li>
   <input type="checkbox" data-index=${i} id="item${i}" ${plate.done ? 'checked' : ''}/>
   <label for="item${i}">${plate.text}</label>
+  <i class="fa fa-close" onClick="deleteItem(${i});"></i>
   </li>
 `;
       }).join("");
@@ -40,3 +41,10 @@
     addItems.addEventListener("submit", addItem);
     itemsList.addEventListener("click", toggleDone);
     populateList(items , itemsList);
+
+
+// This function delets item from list
+function deleteItem(item){
+  delete items[item];
+  populateList(items , itemsList);
+}
